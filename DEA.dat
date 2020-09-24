@@ -1,0 +1,10 @@
+/*********************************************
+ * OPL 12.6.2.0 Data
+ * Author: abdolho
+ * Creation Date: Jan 23, 2018 at 10:09:07 AM
+ *********************************************/
+ 
+DBConnection db("odbc","DevSQLServer//");
+RawData from DBRead(db, "SELECT * FROM [SCMAnalytics].[dbo].[DEAInput_Beta] WHERE MoY = 11 AND FY = 2017 AND ParentFunctionDesc = 'Care' "); 
+
+currIter = 1;

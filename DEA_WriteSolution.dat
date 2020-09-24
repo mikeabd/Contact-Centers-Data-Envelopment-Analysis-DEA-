@@ -1,0 +1,26 @@
+/*********************************************
+ * OPL 12.6.2.0 Data
+ * Author: aric.johnson
+ * Creation Date: Oct 28, 2015 at 3:40:20 PM
+ *********************************************/
+ 
+
+
+// if we already have a scenario in Solution tables with same scenario name, lets delete those records
+// this is currently not working, not sure why. when this is automated, it may be easier to check to see
+// if there are solutions in the DB tables with the same scenario name and then delete those values
+// else possible to get duplicate records
+//prepare {
+// theta_solUpdate_sql= "Delete From DEA_Sol_Theta Where Scenario = '" + this_scenario + "'";
+// lambda_solUpdate_sql= "Delete From DEA_Sol_Lambda Where Scenario = '" + this_scenario + "'";
+//}
+
+DBConnection db("oledb","CubePlanApp/GoodHeath12/PDOpsSand/wpil0214esqlb04\\wpil0214esqlb04");
+
+//DBExecute(db,theta_solUpdate_sql);
+//DBExecute(db,lambda_solUpdate_sql);
+
+
+// uncomment 2 lines below if you want to write solutions back to DB
+//thetaSol to DBUpdate(db, "INSERT INTO DEA_Sol_Theta(dmu, fiscal_year, quarter, scenario,  theta) Values(?,?,?,?,?)");
+//lambdaSol to DBUpdate(db, "INSERT INTO DEA_Sol_Lambda(dmu, scenario, fiscal_year, quarter, fdc, lambda) Values(?,?,?,?,?,?)");

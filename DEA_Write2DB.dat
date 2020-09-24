@@ -1,0 +1,13 @@
+/*********************************************
+ * OPL 12.6.2.0 Data
+ * Author: abdolho
+ * Creation Date: Jan 26, 2018 at 2:06:17 PM
+ *********************************************/
+DBConnection db2("odbc","DevSQLServer//");
+
+DBExecute(db2,"CREATE TABLE DEA_Sol_Theta_New(dmu varchar(256), ParentFunctionDesc varchar(256), fiscal_year int, month int, scenario varchar(256), theta float)");
+thetaSol to DBUpdate(db2, "INSERT INTO DEA_Sol_Theta_New(dmu, ParentFunctionDesc, fiscal_year, month, scenario, theta) Values(?,?,?,?,?,?)");
+DBExecute(db2,"CREATE TABLE DEA_Sol_Lambda_New(dmu varchar(256), ParentFunctionDesc varchar(256), scenario varchar(256), fiscal_year int, month int, callcenter varchar(256), lambda float)");
+lambdaSol to DBUpdate(db2, "INSERT INTO DEA_Sol_Lambda_New(dmu, ParentFunctionDesc, scenario, fiscal_year, month, callcenter, lambda) Values(?,?,?,?,?,?,?)");
+DBExecute(db2,"CREATE TABLE DEA_Sol_SlackSurplus_New(dmu varchar(256), ParentFunctionDesc varchar(256), scenario varchar(256), fiscal_year int, month int, TotalHandleTimeSlack float, TotalOfferedCallsSlack float, TotalCallsAnsweredSurplus float, TotalTransferredCallsSurplus float, TotalTachTransfersSurplus float, Repeats2HourSurplus float, Repeats3DaySurplus float, NTFSurplus float, AttritionSurplus float, ReliablySurplus float, OccupancySurplus float, TotalTalkTimeSurplus float, TotalHoldTimeSurplus float, TotalAfterCallWorkTimeSurplus float)");
+EfficiencySolution to DBUpdate(db2,"INSERT INTO DEA_Sol_SlackSurplus_New(dmu, ParentFunctionDesc, scenario, fiscal_year, month, TotalHandleTimeSlack, TotalOfferedCallsSlack, TotalCallsAnsweredSurplus, TotalTransferredCallsSurplus, TotalTachTransfersSurplus, Repeats2HourSurplus, Repeats3DaySurplus, NTFSurplus, AttritionSurplus, ReliablySurplus, OccupancySurplus, TotalTalkTimeSurplus, TotalHoldTimeSurplus, TotalAfterCallWorkTimeSurplus) Values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
